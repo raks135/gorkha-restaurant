@@ -24,18 +24,20 @@
 }
 
 .nav-logo img {
-    height: 65px;
-    width: 65px;
+    height: 85px;
+    /* Increased from 65px */
+    width: 85px;
     border-radius: 50%;
     object-fit: cover;
     transition: var(--transition-medium);
-    filter: drop-shadow(0 0 20px rgba(212, 165, 24, 0.2));
-    border: 2px solid var(--border-gold);
+    /* Removed heavy golden glow and reduced border */
+    border: 1px solid rgba(212, 165, 24, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar.scrolled .nav-logo img {
-    height: 50px;
-    width: 50px;
+    height: 65px;
+    width: 65px;
 }
 
 .nav-links {
@@ -163,12 +165,12 @@
 
 @media (max-width: 576px) {
     .nav-logo img {
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
     }
 
     .navbar.scrolled .nav-logo img {
-        height: 42px;
-        width: 42px;
+        height: 50px;
+        width: 50px;
     }
 }
