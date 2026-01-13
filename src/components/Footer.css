@@ -1,0 +1,223 @@
+.footer {
+    position: relative;
+    padding: 100px 0 40px;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(212, 165, 24, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Footer Brand */
+.footer-brand {
+    max-width: 340px;
+}
+
+.footer-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 20px rgba(212, 165, 24, 0.2));
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    transition: var(--transition-medium);
+}
+
+.social-btn:hover {
+    background: var(--gradient-gold);
+    border-color: transparent;
+    color: #0a0a0f;
+    box-shadow: var(--shadow-gold);
+}
+
+/* Footer Links */
+.footer-links h4,
+.footer-hours h4,
+.footer-contact h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.footer-links ul li {
+    margin-bottom: 14px;
+}
+
+.footer-links ul li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.footer-links ul li a:hover {
+    color: var(--gold-primary);
+    gap: 12px;
+}
+
+/* Footer Hours */
+.hours-list {
+    margin-bottom: 20px;
+}
+
+.hours-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+}
+
+.hours-item .day {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.hours-item .time {
+    font-size: 0.85rem;
+    color: var(--gold-primary);
+}
+
+.hours-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Footer Contact */
+.footer-contact ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.footer-contact ul li svg {
+    color: var(--gold-primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.footer-contact ul li a {
+    color: var(--text-secondary);
+}
+
+.footer-contact ul li a:hover {
+    color: var(--gold-primary);
+}
+
+/* Footer Bottom */
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+    margin-bottom: 30px;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer-tagline {
+    color: var(--text-secondary) !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 80px 0 30px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+        margin: 0 auto;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-links ul li a {
+        justify-content: center;
+    }
+
+    .footer-contact ul li {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

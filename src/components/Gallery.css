@@ -1,0 +1,247 @@
+.gallery {
+    padding: 120px 0;
+    position: relative;
+    background: var(--bg-deep);
+    overflow: hidden;
+}
+
+.gallery-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.gallery-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(212, 165, 24, 0.05) 0%, transparent 60%);
+    filter: blur(100px);
+}
+
+/* Modern Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    /* Cinematic width */
+    margin: 0 auto 60px;
+    overflow: visible;
+    /* Allows shadows to breathe */
+}
+
+.slider-track-wrapper {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-subtle);
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+}
+
+.slider-slide {
+    min-width: 100%;
+    cursor: grab;
+}
+
+.slide-card {
+    position: relative;
+    width: 100%;
+}
+
+.slide-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Fixed cinematic height */
+    overflow: hidden;
+}
+
+.slide-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.slide-card:hover .slide-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slide-card:hover .slide-overlay {
+    opacity: 1;
+}
+
+.zoom-icon {
+    color: #fff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    color: #fff;
+}
+
+.slide-cat {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--gold-primary);
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.slide-info h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Slider Controls */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: var(--gold-primary);
+    color: #000;
+}
+
+.slider-btn.prev {
+    left: -25px;
+}
+
+.slider-btn.next {
+    right: -25px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--gold-primary);
+    transform: scale(1.2);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.lightbox-caption {
+    text-align: center;
+    color: var(--gold-primary);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slide-img-wrapper {
+        height: 350px;
+    }
+
+    .slide-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-btn.prev {
+        left: 10px;
+    }
+
+    .slider-btn.next {
+        right: 10px;
+    }
+}
