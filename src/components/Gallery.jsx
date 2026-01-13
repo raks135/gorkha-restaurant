@@ -30,9 +30,9 @@ const galleryItems = [
     },
     {
         id: 5,
-        src: '/images/pork chowmein.jpg',
-        alt: 'Pork Chowmein',
-        cat: 'Wok'
+        src: '/images/samosa.jpeg',
+        alt: 'Crispy Samosa',
+        cat: 'Starters'
     },
     {
         id: 6,
