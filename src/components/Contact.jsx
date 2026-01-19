@@ -219,6 +219,26 @@ function Contact() {
                         </form>
                     </motion.div>
                 </div>
+
+                {/* Booking Widget Section */}
+                <motion.div
+                    className="booking-widget-section"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                    <div className="booking-widget-header">
+                        <h3>Book Your Table</h3>
+                        <p>Reserve your spot at Gorkha Restaurant & Bar</p>
+                    </div>
+                    <div className="booking-widget-container">
+                        <iframe 
+                            src="https://hotel-management-system-s9y8.onrender.com/booking-widget-new.html" 
+                            style={{width: '100%', height: '800px', border: 'none'}} 
+                            title="Booking Widget"
+                        />
+                    </div>
+                </motion.div>
             </div>
         </section>
     )
